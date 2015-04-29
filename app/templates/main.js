@@ -1,2 +1,2 @@
 // jshint devel:true
-console.log('\'Allo \'Allo!');
+console.log('Dunique Generator is Up and Running!');

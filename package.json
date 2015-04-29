@@ -1,10 +1,10 @@
 {
-  "name": "generator-lessapp",
-  "version": "0.5.1",
-  "description": "Scaffold out a LESS front-end web app",
+  "name": "generator-dunique",
+  "version": "0.0.1",
+  "description": "Scaffold out a LESS front-end web app for Dunique",
   "license": "BSD",
-  "repository": "robinpokorny/generator-lessapp",
-  "author": "Robin Pokorný",
+  "repository": "Dunique/generator-dunique",
+  "author": "Dunique",
   "main": "app/index.js",
   "scripts": {
     "test": "mocha --reporter spec"
@@ -21,7 +21,8 @@
     "modernizr",
     "less",
     "jquery",
-    "grunt"
+    "grunt",
+    "dunique"
   ],
   "dependencies": {
     "chalk": "^1.0.0",
