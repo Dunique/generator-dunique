@@ -2,11 +2,11 @@
   "name": "<%= _.slugify(appname) %>",
   "version": "0.0.0",
   "dependencies": {
-    "bootstrap": "~3.0.0",<% if (fontawesome) { %>
-    "font-awesome": "~4.0.0",<% } %><% if (respondjs) { %>
+    "bootstrap": "~3.3.4",<% if (fontawesome) { %>
+    "font-awesome": "~4.3.0",<% } %><% if (respondjs) { %>
     "respond": "~1.4.2",<% } %>
-    "modernizr": "~2.6.2",
-    "jquery": "~1.9.1"
+    "modernizr": "~2.8.3",
+    "jquery": "~1.11.2"
   },
   "devDependencies": {}
 }
