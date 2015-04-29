@@ -1,7 +1,7 @@
 {
-  "name": "generator-bootstrap-less",
+  "name": "generator-dunique",
   "version": "3.2.1",
-  "description": "Yeoman generator for bootstrap less",
+  "description": "The Dunique Yeoman generator for bootstrap less",
   "keywords": [
     "yeoman-generator",
     "less",
@@ -9,19 +9,20 @@
     "generator",
     "bootstrap",
     "font-awesome",
-    "glyphicons"
+    "glyphicons",
+    "Dunique"
   ],
-  "homepage": "https://github.com/Thomas-Lebeau/generator-bootstrap-less",
-  "bugs": "https://github.com/Thomas-Lebeau/generator-bootstrap-less/issues",
+  "homepage": "https://github.com/Dunique/generator-dunique",
+  "bugs": "https://github.com/Dunique/generator-dunique/issues",
   "author": {
-    "name": "Thomas Lebeau",
-    "email": "thomas@lebeau.io",
-    "url": "http://lebeau.io"
+    "name": "Dunique",
+    "email": "systeem@dunique.nl",
+    "url": "dunique.nl"
   },
   "main": "app/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Thomas-Lebeau/generator-bootstrap-less.git"
+    "url": "https://github.com/Dunique/generator-dunique.git"
   },
   "scripts": {
     "test": "mocha"
