@@ -25,8 +25,7 @@ var BootstrapLessGenerator = module.exports = function BootstrapLessGenerator(ar
     this.invoke(this.options['test-framework'], {
         options: {
           'skip-message': options['skip-install-message'],
-          'skip-install': options['skip-install'],
-          'coffee': true
+          'skip-install': options['skip-install']
         }
       });
 
@@ -185,7 +184,6 @@ BootstrapLessGenerator.prototype.writeIndex = function writeIndex() {
   }
 
   this.mainJsFile = 'console.log(\'\\\'Allo \\\'Allo!\');';
-  this.mainCoffeeFile = '### jshint white:false ###\n\n\'use strict\'\nconsole.log \'\\\'Allo from CoffeeScript!\'';
 
   // iterate over defaults and create content string
   defaults.forEach(function (el) {
@@ -211,6 +209,5 @@ BootstrapLessGenerator.prototype.app = function app() {
   this.mkdir('app/styles');
   this.mkdir('app/images');
   this.write('app/index.html', this.indexFile);
-  this.write('app/scripts/hello.coffee', this.mainCoffeeFile);
   this.write('app/scripts/main.js', this.mainJsFile);
 };
