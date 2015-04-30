@@ -5,3 +5,4 @@
 .npmignore
 CHANGELOG.md
 test/
+.idea
