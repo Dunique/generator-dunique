@@ -1,5 +1,5 @@
 {
-  "name": "<%= _.slugify(appname) %>",
+  "name": "<%= appname %>",
   "version": "0.0.0",
   "dependencies": {
     "bootstrap": "~3.3.4",<% if (fontawesome) { %>

@@ -3,10 +3,17 @@ var util = require('util');
 var path = require('path');
 var yeoman = require('yeoman-generator');
 var chalk = require('chalk');
-
+var _ = require('lodash');
+var _s = require("underscore.string");
 
 var BootstrapLessGenerator = module.exports = function BootstrapLessGenerator(args, options, config) {
 	yeoman.generators.Base.apply(this, arguments);
+
+	// This makes `appname` a required argument.
+	this.argument('appname', { type: String, required: false, defaults: this.appname });
+
+	// And you can then access it later on this way; e.g. CamelCased
+	this.appname = _s.camelize(this.appname);
 
 	// setup the test-framework property, Gruntfile template will need this
 	this.testFramework = options['test-framework'] || 'mocha';
@@ -41,6 +48,10 @@ var BootstrapLessGenerator = module.exports = function BootstrapLessGenerator(ar
 };
 
 util.inherits(BootstrapLessGenerator, yeoman.generators.Base);
+
+BootstrapLessGenerator.prototype.initializing = function () {
+	this.appname = _s.slugify(this.appname);
+};
 
 BootstrapLessGenerator.prototype.askFor = function askFor() {
 	var cb = this.async();
