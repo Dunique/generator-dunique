@@ -1,6 +1,6 @@
 {
   "name": "generator-dunique",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "The Dunique Yeoman generator for bootstrap less",
   "keywords": [
     "yeoman-generator",
@@ -31,7 +31,9 @@
     "yeoman-generator": "~0.19.2",
     "generator-mocha": "~0.1.7",
     "yosay": "^1.0.3",
-    "chalk": "^1.0.0"
+    "chalk": "^1.0.0",
+    "lodash": "^3.7.0",
+    "underscore.string": "^3.0.3"
   },
   "devDependencies": {
     "mocha": "~2.2.4",
