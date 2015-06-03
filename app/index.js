@@ -163,14 +163,9 @@ BootstrapLessGenerator.prototype.writeIndex = function writeIndex() {
 		'scripts/main.js'
 	]);
 
-	this.indexFile = this.appendScripts(this.indexFile, 'scripts/plugins.js', [
-		'scripts/plugins.js'
-	]);
-
-
 	if (this.jsBootstrap) {
-		// wire Bootstrap plugins
-		this.indexFile = this.appendScripts(this.indexFile, 'scripts/vendor/bootstrap.js', [
+		// wire Bootstrap plugins and default plugins
+		this.indexFile = this.appendScripts(this.indexFile, 'scripts/plugins.js', [
 			'bower_components/bootstrap/js/affix.js',
 			'bower_components/bootstrap/js/alert.js',
 			'bower_components/bootstrap/js/dropdown.js',
@@ -182,7 +177,8 @@ BootstrapLessGenerator.prototype.writeIndex = function writeIndex() {
 			'bower_components/bootstrap/js/carousel.js',
 			'bower_components/bootstrap/js/scrollspy.js',
 			'bower_components/bootstrap/js/collapse.js',
-			'bower_components/bootstrap/js/tab.js'
+			'bower_components/bootstrap/js/tab.js',
+			'scripts/plugins.js'
 		]);
 	}
 
