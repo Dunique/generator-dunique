@@ -156,7 +156,7 @@ BootstrapLessGenerator.prototype.writeIndex = function writeIndex() {
 	];
 
 	this.indexFile = this.appendScripts(this.indexFile, 'scripts/jquery.js', [
-		'bower_components/jquery/jquery.js'
+		'bower_components/jquery/dist/jquery.js'
 	]);
 
 	this.indexFile = this.appendScripts(this.indexFile, 'scripts/main.js', [
