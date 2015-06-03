@@ -1,4 +1,4 @@
-# Web app generator with LESS [![Build Status](https://secure.travis-ci.org/robinpokorny/generator-lessapp.png?branch=master)](http://travis-ci.org/robinpokorny/generator-lessapp) [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
+# Web app generator with LESS [![Build Status](https://secure.travis-ci.org/Dunique/generator-dunique.png?branch=master)](http://travis-ci.org/Dunique/generator-dunique) [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 
 Edited default [Yeoman](http://yeoman.io) generator for scaffolding out a front-end web app with Twitter Bootstrap in LESS
 
@@ -11,16 +11,17 @@ Edited default [Yeoman](http://yeoman.io) generator for scaffolding out a front-
 * Automagically wire up your Bower components with [grunt-wiredep](#third-party-dependencies).
 * Awesome Image Optimization (via OptiPNG, pngquant, jpegtran and gifsicle)
 * Mocha Unit Testing with PhantomJS
-* Bootstrap in LESS (Optional)
+* Bootstrap in LESS 
 * Leaner Modernizr builds (Optional)
+* Font Awesome (Optional)
 
-For more information on what `generator-lessapp` can do for you, take a look at the [Grunt tasks](https://github.com/robinpokorny/generator-lessapp/blob/master/app/templates/_package.json) used in our `package.json`.
+For more information on what `generator-dunique` can do for you, take a look at the [Grunt tasks](https://github.com/Dunique/generator-dunique/blob/master/app/templates/_package.json) used in our `package.json`.
 
 
 ## Getting Started
 
-- Install: `npm install -g generator-lessapp`
-- Run: `yo lessapp`
+- Install: `npm install -g generator-dunique`
+- Run: `yo dunique`
 - Run `grunt` for building and `grunt serve` for preview[\*](#grunt-serve-note). `--allow-remote` option for remote access.
 
 #### Third-Party Dependencies
@@ -57,11 +58,6 @@ Note: `grunt server` was used for previewing in earlier versions of the project,
 * `--test-framework=<framework>`
 
   Defaults to `mocha`. Can be switched for another supported testing framework like `jasmine`.
-
-* `--coffee`
-
-  Add support for [CoffeeScript](http://coffeescript.org/).
-
 
 ## Contribute
 
