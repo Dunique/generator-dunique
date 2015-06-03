@@ -5,7 +5,7 @@ var assert  = require('assert');
 
 describe('bootstrap-dunique generator', function () {
   it('can be imported without blowing up', function () {
-    var app = require('../app');
+    var app = require('../app/index');
     assert(app !== undefined);
   });
 });
