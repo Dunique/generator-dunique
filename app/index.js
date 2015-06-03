@@ -75,7 +75,7 @@ module.exports = yeoman.generators.Base.extend({
     };
 
     var bs = 'bootstrap';
-    bower.dependencies[bs] = "~3.2.0";
+    bower.dependencies[bs] = "~3.3.4";
     bower.dependencies['font-awesome'] = '~4.3.0';
 
     if (this.includeModernizr) {
