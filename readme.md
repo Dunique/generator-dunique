@@ -57,7 +57,7 @@ Note: `grunt server` was used for previewing in earlier versions of the project,
 
 * `--test-framework=<framework>`
 
-  Defaults to `mocha`. Can be switched for another supported testing framework like `jasmine`.
+  Defaults to `mocha`. Can be switched for another supported testing framework like `jasmine`. 
 
 ## Contribute
 
