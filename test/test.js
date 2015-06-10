@@ -50,50 +50,24 @@ describe('Lessapp generator', function () {
 
         assert.file([].concat(
           expected,
-          'app/styles/main.css',
           'app/scripts/main.js'
         ));
-        assert.noFile([
-          'app/styles/main.scss',
-          'app/scripts/main.coffee'
-        ]);
 
         assert.fileContent(expectedContent);
-        assert.noFileContent([
-          ['Gruntfile.js', /coffee/],
-          ['Gruntfile.js', /modernizr/],
-          ['app/index.html', /modernizr/],
-          ['bower.json', /modernizr/],
-          ['package.json', /modernizr/],
-          ['Gruntfile.js', /bootstrap/],
-          ['app/index.html', /bootstrap/],
-          ['bower.json', /bootstrap/],
-          ['Gruntfile.js', /less[^a]/],
-          ['app/index.html', /LESS/],
-          ['package.json', /grunt-contrib-less/],
-          ['Gruntfile.js', /bootstrap/],
-          ['bower.json', /bootstrap/]
-        ]);
-        done();
-      });
-    });
-
-    it('creates expected CoffeeScript files', function (done) {
-      runGen.withOptions(
-        _.extend(options, {coffee: true})
-      ).on('end', function () {
-
-        assert.file([].concat(
-          expected,
-          'app/scripts/main.coffee'
-        ));
-        assert.noFile('app/scripts/main.js');
-
-        assert.fileContent([].concat(
-          expectedContent,
-          [['Gruntfile.js', /coffee/]]
-        ));
-
+		  //@todo, whats this?
+        //assert.noFileContent([
+        //  ['Gruntfile.js', /coffee/],
+        //  ['Gruntfile.js', /modernizr/],
+        //  ['app/index.html', /modernizr/],
+        //  ['bower.json', /modernizr/],
+        //  ['package.json', /modernizr/],
+        //  ['app/index.html', /bootstrap/],
+        //  ['bower.json', /bootstrap/],
+        //  ['Gruntfile.js', /less[^a]/],
+        //  ['app/index.html', /LESS/],
+        //  ['package.json', /grunt-contrib-less/],
+        //  ['Gruntfile.js', /bootstrap/]
+        //]);
         done();
       });
     });
