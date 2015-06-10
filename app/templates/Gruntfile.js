@@ -309,6 +309,21 @@ module.exports = function (grunt) {
       }
     },
 
+	replace: {
+		cssBower: {
+		  src: ['dist/styles/main.css'],
+		  overwrite: true,                 // overwrite matched source files
+		  replacements: [{
+			  from: '../../bower_components/font-awesome/',
+			  to: '../'
+		  },
+		  {
+			  from: '../../bower_components/bootstrap/',
+			  to: '../'
+		  }]
+	  }
+	},
+
     // By default, your `index.html`'s <!-- Usemin block --> will take care
     // of minification. These next options are pre-configured if you do not
     // wish to use the Usemin blocks.
@@ -456,9 +471,8 @@ module.exports = function (grunt) {
     'uglify',
     'copy:dist',<% if (includeModernizr) { %>
     'modernizr',<% } %>
-    'filerev',
     'usemin',
-    'htmlmin'
+	'replace:cssBower'
   ]);
 
   grunt.registerTask('default', [
