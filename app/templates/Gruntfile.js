@@ -52,7 +52,7 @@ module.exports = function (grunt) {
       },
       less: {
         files: ['<%%= config.app %>/styles/{,*/}*.less'],
-        tasks: ['less:server', 'autoprefixer']
+        tasks: ['less:server', 'autoprefixer', 'less:dev']
       },
       styles: {
         files: ['<%%= config.app %>/styles/{,*/}*.css'],
@@ -180,6 +180,15 @@ module.exports = function (grunt) {
           ext: '.css'
         }]
       },
+			dev: {
+				options: {
+					cleancss: true,
+						report: 'gzip'
+				},
+				files: {
+					'<%= config.app %>/styles/main.css': '<%= config.app %>/styles/main.less'
+				}
+			},
       server: {
         options: {
           sourceMap: true,
@@ -472,7 +481,8 @@ module.exports = function (grunt) {
     'copy:dist',<% if (includeModernizr) { %>
     'modernizr',<% } %>
     'usemin',
-	'replace:cssBower'
+		'replace:cssBower',
+		'less:dev'
   ]);
 
   grunt.registerTask('default', [
