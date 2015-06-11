@@ -13,7 +13,7 @@ Edited default [Yeoman](http://yeoman.io) generator for scaffolding out a front-
 * Mocha Unit Testing with PhantomJS
 * Bootstrap in LESS 
 * Leaner Modernizr builds (Optional)
-* Font Awesome (Optional)
+* Font Awesome
 
 For more information on what `generator-dunique` can do for you, take a look at the [Grunt tasks](https://github.com/Dunique/generator-dunique/blob/master/app/templates/_package.json) used in our `package.json`.
 
@@ -67,6 +67,4 @@ Note: We are regularly asked whether we can add or take away features. If a chan
 
 ## License
 
-[BSD license](http://opensource.org/licenses/bsd-license.php)
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/robinpokorny/generator-lessapp/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+MIT license
