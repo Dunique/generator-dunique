@@ -1,0 +1,43 @@
+//-- kleuren -------------------------
+@primcol: #6b2d92;
+@seccol: darken(#6b2d92, 20%);
+
+//-- others -------------------------
+@textcolor : darken(#fff, 80%); //lighter
+
+// -- branding -------------------------
+@twitter-brand:  #35ccff;
+@facebook-brand: #03539e;
+@linkedin-brand: #217bc1;
+
+//-- fonts -------------------------
+@font1: 'Montserrat', sans-serif;
+@font2: "FontAwesome", sans-serif;
+@fontlight: "montserratlight", sans-serif;
+
+//-- font-size -------------------------
+@basefont: 12px;
+
+//-- screen resolutions -------------------------
+@only-mobile: ~'min-width: @{screen-sm}';
+@xs: ~'max-width: @{screen-xs}';
+@sm: ~'max-width: @{screen-sm}';
+@md: ~'max-width: @{screen-md}';
+@lg: ~'max-width: @{screen-lg}';
+
+// ------------------------------------------------------
+// -- Include the default plugins -----------------------
+// ------------------------------------------------------
+@import "../../bower_components/bootstrap/less/bootstrap.less";
+@icon-font-path: "../../bower_components/bootstrap/fonts/";
+
+@import "../../bower_components/font-awesome/less/font-awesome.less";
+@fa-font-path: "../../bower_components/font-awesome/fonts/";
+
+// -- load  defaults -------------------------
+@import 'vendor/default.less'; //Load the default less
+@import 'vendor/mixins.less'; //Load the mixins
+@import 'vendor/ee_forms.less'; //Load the forms
+
+// -- Third party -------------------------
+//@import (less) '../bower_components/jQuery.mmenu/dist/css/jquery.mmenu.all.css';

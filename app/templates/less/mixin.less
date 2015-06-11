@@ -1,0 +1,222 @@
+//line
+.d_line (@color : lighten(#000, 30%)) {
+	margin-top: 25px;
+	height: 1px;
+	width: 100%;
+	background: @color;
+
+	&.full-width {
+		width: 100%;
+	}
+}
+
+//button mixin
+.d_button(@bg: @seccol, @textcol: @wit, @pad: 0.5em 1em) {
+	display: inline-block;
+	padding: @pad;
+	background: @bg;
+	#gradient .vertical(lighten(@bg, 20%), @bg);
+	//@include background-image(radial-gradient(top center, lighten($bg,20%), $bg));
+	color: @textcol;
+	font-family: @font1;
+	font-weight: 500;
+	border: 0;
+	#r_shadow .box(fade(@zwart, 10%) 0 1px 3px);
+	//@include box-shadow(rgba($black,0.1) 0 1px 3px);
+
+	&:hover,
+	&:focus {
+		background: lighten(@seccol, 10%);
+		color: $ white;
+	}
+
+	&:focus {
+		outline: 1px solid @seccol;
+	}
+
+	&:active {
+		background: lighten(@seccol, 20%);
+	}
+
+	&:disabled {
+		background: darken(@wit, 5%);
+		color: darken(@wit, 25%);
+		cursor: default;
+	}
+}
+
+#d_border {
+	.bordered(@top-color: #EEE, @right-color: #EEE, @bottom-color: #EEE, @left-color: #EEE) {
+		border-top: solid 1px @top-color;
+		border-left: solid 1px @left-color;
+		border-right: solid 1px @right-color;
+		border-bottom: solid 1px @bottom-color;
+	}
+	.rounded(@radius: 2px) {
+		-webkit-border-radius: @radius;
+		-moz-border-radius: @radius;
+		border-radius: @radius;
+		-moz-background-clip: padding;
+		-webkit-background-clip: padding-box;
+		background-clip: padding-box;
+	}
+
+	.radius(@topright: 0, @bottomright: 0, @bottomleft: 0, @topleft: 0) {
+		-webkit-border-top-right-radius: @topright;
+		-webkit-border-bottom-right-radius: @bottomright;
+		-webkit-border-bottom-left-radius: @bottomleft;
+		-webkit-border-top-left-radius: @topleft;
+		-moz-border-radius-topright: @topright;
+		-moz-border-radius-bottomright: @bottomright;
+		-moz-border-radius-bottomleft: @bottomleft;
+		-moz-border-radius-topleft: @topleft;
+		border-top-right-radius: @topright;
+		border-bottom-right-radius: @bottomright;
+		border-bottom-left-radius: @bottomleft;
+		border-top-left-radius: @topleft;
+		-moz-background-clip: padding;
+		-webkit-background-clip: padding-box;
+		background-clip: padding-box;
+	}
+}
+
+#d_shadow {
+	.drop(@x-axis: 0, @y-axis: 1px, @blur: 2px, @alpha: 0.1, @color: #000) {
+		-webkit-box-shadow: @x-axis @y-axis @blur fadeout(@color, 100-(@alpha*100));
+		-moz-box-shadow: @x-axis @y-axis @blur fadeout(@color, 100-(@alpha*100));
+		box-shadow: @x-axis @y-axis @blur fadeout(@color, 100-(@alpha*100));
+	}
+	.inner(@horizontal:0, @vertical:1px, @blur:2px, @alpha: 0.4, @color: #000) {
+		-webkit-box-shadow: inset @horizontal @vertical @blur fadeout(@color, 100-(@alpha*100));
+		-moz-box-shadow: inset @horizontal @vertical @blur fadeout(@color, 100-(@alpha*100));
+		box-shadow: inset @horizontal @vertical @blur fadeout(@color, 100-(@alpha*100));
+	}
+	.both(@horizontalOut:0, @verticalOut:1px, @blurOut:2px, @alphaOut: 0.4, @colorOut: #000,@horizontalIn:0, @verticalIn:1px, @blurIn:2px, @alphaIn: 0.4, @colorIn: #000) {
+		-webkit-box-shadow: @horizontalOut @verticalOut @blurOut fadeout(@colorOut, 100-(@alphaOut*100)), inset @horizontalIn @verticalIn @blurIn fadeout(@colorIn, 100-(@alphaIn*100));
+		-moz-box-shadow: @horizontalOut @verticalOut @blurOut fadeout(@colorOut, 100-(@alphaOut*100)), inset @horizontalIn @verticalIn @blurIn fadeout(@colorIn, 100-(@alphaIn*100));
+		box-shadow: @horizontalOut @verticalOut @blurOut fadeout(@colorOut, 100-(@alphaOut*100)), inset @horizontalIn @verticalIn @blurIn fadeout(@colorIn, 100-(@alphaIn*100));
+	}
+	.box(@arguments) {
+		-webkit-box-shadow: @arguments;
+		-moz-box-shadow: @arguments;
+		box-shadow: @arguments;
+	}
+	.text(@arguments) {
+		-webkit-text-shadow: @arguments;
+		-moz-text-shadow: @arguments;
+		text-shadow: @arguments;
+		-ms-text-shadow: @arguments;
+		-o-text-shadow: @arguments;
+		-khtml-text-shadow: @arguments;
+	}
+	.none() {
+		-webkit-box-shadow: none;
+		-moz-box-shadow: none;
+		box-shadow: none;
+	}
+}
+
+#d_transform {
+	.rotation(@deg:5deg) {
+		-webkit-transform: rotate(@deg);
+		-moz-transform: rotate(@deg);
+		transform: rotate(@deg);
+		-ms-transform: rotate(@deg);
+	}
+	.scale(@ratio:1.5) {
+		-webkit-transform: scale(@ratio);
+		-moz-transform: scale(@ratio);
+		transform: scale(@ratio);
+	}
+	.translate(@x:0, @y:0) {
+		-moz-transform: translate(@x, @y);
+		-webkit-transform: translate(@x, @y);
+		-o-transform: translate(@x, @y);
+		-ms-transform: translate(@x, @y);
+		transform: translate(@x, @y);
+	}
+	.opacity(@opacity: 0.5) {
+		@percent: @opacity * 100;
+		/* IE 8 */
+		-ms-filter: ~"progid:DXImageTransform.Microsoft.Alpha(opacity=@{percent})";
+		/* IE 5-7 */
+		filter: ~"alpha(opacity=@{percent})";
+		/* Netscape */
+		-moz-opacity: @opacity;
+		/* Safari 1.x */
+		-khtml-opacity: @opacity;
+		/* Webkit */
+		-webkit-opacity: @opacity;
+		/* Good browsers */
+		opacity: @opacity;
+	}
+}
+
+#d_transition {
+	.all(@duration:0.2s, @ease:ease-out) {
+		-webkit-transition: all @duration @ease;
+		-moz-transition: all @duration @ease;
+		transition: all @duration @ease;
+	}
+	.property(@property: width,@delay: 200ms, @ease:ease-out) {
+		transition: @property @delay @ease;
+		-moz-transition: @property @delay @ease;
+		-webkit-transition: @property @delay @ease;
+		-o-transition: @property @delay @ease;
+	}
+	.duration(@duration: 0.2s) {
+		-moz-transition-duration: @duration;
+		-webkit-transition-duration: @duration;
+		transition-duration: @duration;
+	}
+
+	.timing() {
+		-webkit-transition-timing-function: cubic-bezier(0.200, 0.760, 0.595, 0.030);
+		-moz-transition-timing-function: cubic-bezier(0.200, 0.760, 0.595, 0.030);
+		-o-transition-timing-function: cubic-bezier(0.200, 0.760, 0.595, 0.030);
+		transition-timing-function: cubic-bezier(0.200, 0.760, 0.595, 0.030); /* custom */
+	}
+}
+
+#d_animate {
+	.keyframes(@name; @arguments) {
+		@-moz-keyframes @name { @arguments(); }
+		@-webkit-keyframes @name { @arguments(); }
+		@keyframes @name { @arguments(); }
+	}
+
+	.animation(@arguments) {
+		-webkit-animation: @arguments;
+		-moz-animation: @arguments;
+		animation: @arguments;
+	}
+}
+
+#d_content {
+	.columns(@colwidth: 250px, @colcount: 0, @colgap: 50px, @columnRuleColor: #EEE, @columnRuleStyle: solid, @columnRuleWidth: 1px) {
+		-moz-column-width: @colwidth;
+		-moz-column-count: @colcount;
+		-moz-column-gap: @colgap;
+		-moz-column-rule-color: @columnRuleColor;
+		-moz-column-rule-style: @columnRuleStyle;
+		-moz-column-rule-width: @columnRuleWidth;
+		-webkit-column-width: @colwidth;
+		-webkit-column-count: @colcount;
+		-webkit-column-gap: @colgap;
+		-webkit-column-rule-color: @columnRuleColor;
+		-webkit-column-rule-style: @columnRuleStyle;
+		-webkit-column-rule-width: @columnRuleWidth;
+		column-width: @colwidth;
+		column-count: @colcount;
+		column-gap: @colgap;
+		column-rule-color: @columnRuleColor;
+		column-rule-style: @columnRuleStyle;
+		column-rule-width: @columnRuleWidth;
+	}
+}
+
+#d_backface-visibility(@visibility){
+	-webkit-backface-visibility: @visibility;
+	-moz-backface-visibility: @visibility;
+	backface-visibility: @visibility;
+}
