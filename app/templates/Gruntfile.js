@@ -186,7 +186,7 @@ module.exports = function (grunt) {
 						report: 'gzip'
 				},
 				files: {
-					'<%= config.app %>/styles/main.css': '<%= config.app %>/styles/main.less'
+					'<%%= config.app %>/styles/main.css': '<%%= config.app %>/styles/main.less'
 				}
 			},
       server: {
